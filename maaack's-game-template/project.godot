@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Maaack's Game Template"
+config/name="GWJ 99"
 run/main_scene="res://scenes/opening/opening.tscn"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.png"
@@ -39,6 +39,10 @@ window/size/viewport_height=720
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg", "res://addons/maaacks_music_controller/plugin.cfg", "res://addons/maaacks_scene_loader/plugin.cfg", "res://addons/maaacks_ui_sound_controller/plugin.cfg", "res://addons/plugin_updater/plugin.cfg", "res://addons/yggdrasil/plugin.cfg")
+
+[global_group]
+
+mouse=""
 
 [gui]
 
@@ -155,6 +159,7 @@ plugins={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cin5u0sigi7a6"]
+
+[sub_resource type="Gradient" id="Gradient_x5gf8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ru5f0"]
+gradient = SubResource("Gradient_x5gf8")
+fill_from = Vector2(1, 0)
+
+[node name="Button" type="Button" unique_id=855087114]
+anchors_preset = -1
+anchor_left = 0.003125
+anchor_top = 0.0013888889
+anchor_right = 0.084375
+anchor_bottom = 0.056944445
+offset_left = -2.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="NinePatchRect" parent="." unique_id=133277159]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ru5f0")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1778529625]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 13.0
+offset_right = 458.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 32
+text = "Test Upgrade"

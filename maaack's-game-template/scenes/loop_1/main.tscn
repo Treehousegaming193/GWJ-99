@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dwidn4ihbk7vg"]
+
+[ext_resource type="PackedScene" uid="uid://cin5u0sigi7a6" path="res://scenes/loop_1/button.tscn" id="1_enwsr"]
+[ext_resource type="Script" uid="uid://b2a8pagt5byrw" path="res://scenes/loop_1/main.gd" id="1_xgdwn"]
+[ext_resource type="PackedScene" uid="uid://b8wq3ohxgfusi" path="res://scenes/loop_1/cursor.tscn" id="2_w8ueh"]
+[ext_resource type="Script" uid="uid://2tl773mewjn1" path="res://scenes/loop_1/play_area.gd" id="3_ohh3f"]
+[ext_resource type="PackedScene" uid="uid://p5n2virfjoet" path="res://scenes/loop_1/rock.tscn" id="3_rmllg"]
+
+[node name="Node2D" type="Node2D" unique_id=778425580]
+script = ExtResource("1_xgdwn")
+
+[node name="Control" type="Control" parent="." unique_id=850861335]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -520.0
+offset_top = -718.0
+offset_bottom = 726.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=262133632]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer" unique_id=1872155265]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" parent="Control/ScrollContainer/VBoxContainer" unique_id=855087114 instance=ExtResource("1_enwsr")]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Control/ScrollContainer/VBoxContainer" unique_id=131190014]
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2073904489]
+position = Vector2(-1277, 0)
+zoom = Vector2(0.5, 0.5)
+
+[node name="play_area" type="Node2D" parent="." unique_id=441502009]
+position = Vector2(-1275, 2)
+script = ExtResource("3_ohh3f")
+
+[node name="Rock" parent="play_area" unique_id=1015225846 instance=ExtResource("3_rmllg")]
+position = Vector2(-146, -57)
+
+[node name="Cursor" parent="." unique_id=813503055 instance=ExtResource("2_w8ueh")]
+
+[node name="spawn_timer" type="Timer" parent="." unique_id=1053683265]
+
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="spawn_timer" to="play_area" method="_on_spawn_timer_timeout"]

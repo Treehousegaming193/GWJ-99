@@ -22,6 +22,7 @@ value_count = 1
 script = ExtResource("2_q21n4")
 is_root = true
 id = 1
+external_id = "Node_1"
 name = "Node_1"
 type = 1
 icon = ExtResource("1_7lj0d")
