@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://3kc0nic2b47p"]
+
+[ext_resource type="Script" uid="uid://cq1bvvgpollc6" path="res://scripts/skill_tree.gd" id="1_vgbvi"]
+
+[node name="Skill_tree" type="Control" unique_id=91781663]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vgbvi")

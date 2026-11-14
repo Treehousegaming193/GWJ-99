@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="YggdrasilTree" format=3 uid="uid://4ufbwwf80nnj"]
+
+[ext_resource type="Texture2D" uid="uid://do1occ54m41fj" path="res://addons/yggdrasil/blank_icon.png" id="1_7lj0d"]
+[ext_resource type="Script" uid="uid://e7tfsgtpbob6" path="res://addons/yggdrasil/scripts/resources/yggdrasil_tree.gd" id="1_gpfuc"]
+[ext_resource type="Script" uid="uid://cri0khs3wypbm" path="res://addons/yggdrasil/scripts/resources/yggdrasil_attribute.gd" id="1_q21n4"]
+[ext_resource type="Script" uid="uid://dsrk0byl742tb" path="res://addons/yggdrasil/scripts/resources/yggdrasil_node.gd" id="2_q21n4"]
+
+[sub_resource type="Resource" id="Resource_c438h"]
+script = ExtResource("1_q21n4")
+id = "cost"
+name = "cost"
+value_count = 1
+
+[sub_resource type="Resource" id="Resource_riycs"]
+script = ExtResource("1_q21n4")
+id = "health"
+name = "health"
+effect = "Adds +# health"
+value_count = 1
+
+[sub_resource type="Resource" id="Resource_u3p8u"]
+script = ExtResource("2_q21n4")
+is_root = true
+id = 1
+name = "Node_1"
+type = 1
+icon = ExtResource("1_7lj0d")
+position = Vector2(42, -5.5)
+line_data = {}
+out_nodes = []
+in_nodes = []
+attributes = {
+"cost": [1],
+"health": [1]
+}
+max_allocations = 1
+
+[resource]
+script = ExtResource("1_gpfuc")
+id = "skills_1"
+name = "Skills_1"
+id_counter = 1
+icon_sizes = {
+0: Vector2(0, 0),
+1: Vector2(0, 0),
+2: Vector2(0, 0)
+}
+icons = {
+0: null,
+1: null,
+2: null
+}
+node_size = {
+0: Vector2(27, 27),
+1: Vector2(48, 48),
+2: Vector2(64, 64)
+}
+nodes = [SubResource("Resource_u3p8u")]
+decorations = []
+prefabs = {}
+attributes = {
+"cost": SubResource("Resource_c438h"),
+"health": SubResource("Resource_riycs")
+}

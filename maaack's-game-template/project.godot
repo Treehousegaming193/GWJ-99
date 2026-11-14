@@ -20,6 +20,8 @@ config/icon="res://icon.png"
 SceneLoader="*res://addons/maaacks_scene_loader/base/nodes/autoloads/scene_loader/scene_loader.tscn"
 MusicController="*res://addons/maaacks_music_controller/base/scenes/autoloads/music_controller.tscn"
 UISoundController="*res://addons/maaacks_ui_sound_controller/base/scenes/autoloads/ui_sound_controller.tscn"
+YggdrasilLoader="*uid://dqbvvuokqq4um"
+YggdrasilSerializer="*uid://g5grx5mhggq2"
 
 [clean_copy_examples]
 
@@ -36,7 +38,7 @@ window/size/viewport_height=720
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg", "res://addons/maaacks_music_controller/plugin.cfg", "res://addons/maaacks_scene_loader/plugin.cfg", "res://addons/maaacks_ui_sound_controller/plugin.cfg", "res://addons/plugin_updater/plugin.cfg")
+enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg", "res://addons/maaacks_music_controller/plugin.cfg", "res://addons/maaacks_scene_loader/plugin.cfg", "res://addons/maaacks_ui_sound_controller/plugin.cfg", "res://addons/plugin_updater/plugin.cfg", "res://addons/yggdrasil/plugin.cfg")
 
 [gui]
 
