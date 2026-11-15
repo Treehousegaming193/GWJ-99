@@ -22,6 +22,7 @@ MusicController="*res://addons/maaacks_music_controller/base/scenes/autoloads/mu
 UISoundController="*res://addons/maaacks_ui_sound_controller/base/scenes/autoloads/ui_sound_controller.tscn"
 YggdrasilLoader="*uid://dqbvvuokqq4um"
 YggdrasilSerializer="*uid://g5grx5mhggq2"
+globals="*uid://cf42ho8xo30ac"
 
 [clean_copy_examples]
 

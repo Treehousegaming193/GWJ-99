@@ -1,8 +1,18 @@
 extends Node2D
 
-var rock: PackedScene = "res://scenes/loop_1/rock.tscn"
+@onready var rock: Resource = preload("res://scenes/loop_1/rock.tscn")
 
 func _on_spawn_timer_timeout() -> void:
-	var spawn_pos_x = randi_range(-2493.0, -60)
-	var spawn_pos_y = randi_range(-226, 256)
-	
+	var rock_instance: Node = rock.instantiate()
+	add_child(rock_instance)
+	var point_1:Vector2 = $spawn_1.position 
+	var point_2:Vector2 = $spawn_2.position
+	var spawn_location = get_random_point(point_1, point_2)
+	rock_instance.set_position(spawn_location)
+
+func get_random_point(point1: Vector2, point2: Vector2) -> Vector2:
+	var x_value:float = randf_range(point1.x, point2.x)
+
+	var y_value:float = randf_range(point1.y, point2.y)
+	var random_point: Vector2 = Vector2(x_value, y_value)
+	return(random_point)

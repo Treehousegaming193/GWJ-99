@@ -9,6 +9,8 @@ radius = 14.142136
 script = ExtResource("1_wovlu")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=778401018 groups=["mouse"]]
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=94915220]
 shape = SubResource("CircleShape2D_gu8r8")

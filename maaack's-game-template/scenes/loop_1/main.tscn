@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cin5u0sigi7a6" path="res://scenes/loop_1/button.tscn" id="1_enwsr"]
 [ext_resource type="Script" uid="uid://b2a8pagt5byrw" path="res://scenes/loop_1/main.gd" id="1_xgdwn"]
-[ext_resource type="PackedScene" uid="uid://b8wq3ohxgfusi" path="res://scenes/loop_1/cursor.tscn" id="2_w8ueh"]
 [ext_resource type="Script" uid="uid://2tl773mewjn1" path="res://scenes/loop_1/play_area.gd" id="3_ohh3f"]
 [ext_resource type="PackedScene" uid="uid://p5n2virfjoet" path="res://scenes/loop_1/rock.tscn" id="3_rmllg"]
 
@@ -10,7 +9,6 @@
 script = ExtResource("1_xgdwn")
 
 [node name="Control" type="Control" parent="." unique_id=850861335]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -520.0
@@ -50,9 +48,14 @@ script = ExtResource("3_ohh3f")
 [node name="Rock" parent="play_area" unique_id=1015225846 instance=ExtResource("3_rmllg")]
 position = Vector2(-146, -57)
 
-[node name="Cursor" parent="." unique_id=813503055 instance=ExtResource("2_w8ueh")]
+[node name="spawn_1" type="Node2D" parent="play_area" unique_id=1123660802]
+position = Vector2(-1138, -604)
+
+[node name="spawn_2" type="Node2D" parent="play_area" unique_id=2125385967]
+position = Vector2(557, 578)
 
 [node name="spawn_timer" type="Timer" parent="." unique_id=1053683265]
+autostart = true
 
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="spawn_timer" to="play_area" method="_on_spawn_timer_timeout"]
