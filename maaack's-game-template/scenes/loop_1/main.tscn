@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2a8pagt5byrw" path="res://scenes/loop_1/main.gd" id="1_xgdwn"]
 [ext_resource type="Script" uid="uid://2tl773mewjn1" path="res://scenes/loop_1/surface.gd" id="3_ohh3f"]
+[ext_resource type="Script" uid="uid://cvf1go2ooffsl" path="res://scenes/loop_1/core.gd" id="5_6sbxy"]
 [ext_resource type="Script" uid="uid://vutskklr4juq" path="res://scenes/loop_1/cave.gd" id="5_aksaf"]
 [ext_resource type="Texture2D" uid="uid://bwfwhdtve5rin" path="res://assets/loop1/background.png" id="5_ohh3f"]
 
@@ -47,6 +48,25 @@ texture = ExtResource("5_ohh3f")
 wait_time = 2.0
 autostart = true
 
+[node name="Core" type="Node2D" parent="." unique_id=1949845411]
+visible = false
+script = ExtResource("5_6sbxy")
+
+[node name="spawn_1" type="Node2D" parent="Core" unique_id=1932093563]
+position = Vector2(-1589, -860)
+
+[node name="spawn_2" type="Node2D" parent="Core" unique_id=540115599]
+position = Vector2(840, 793)
+
+[node name="Background" type="Sprite2D" parent="Core" unique_id=2038447106]
+position = Vector2(10, -2)
+scale = Vector2(1.2166476, 0.9701613)
+texture = ExtResource("5_ohh3f")
+
+[node name="cave_spawn_timer" type="Timer" parent="Core" unique_id=612116906]
+wait_time = 3.0
+autostart = true
+
 [node name="Control" type="Control" parent="." unique_id=850861335]
 layout_mode = 3
 anchors_preset = 0
@@ -85,5 +105,7 @@ text = "Core"
 
 [connection signal="timeout" from="Surface/surface_spawn_timer" to="Surface" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Cave/cave_spawn_timer" to="Cave" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Core/cave_spawn_timer" to="Core" method="_on_spawn_timer_timeout"]
 [connection signal="button_down" from="Control/surface_button" to="." method="_on_surface_button_button_down"]
 [connection signal="button_down" from="Control/cave_button" to="." method="_on_cave_button_button_down"]
+[connection signal="button_down" from="Control/core_button" to="." method="_on_core_button_button_down"]
