@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cvf1go2ooffsl" path="res://scenes/loop_1/core.gd" id="5_6sbxy"]
 [ext_resource type="Script" uid="uid://vutskklr4juq" path="res://scenes/loop_1/cave.gd" id="5_aksaf"]
 [ext_resource type="Texture2D" uid="uid://bwfwhdtve5rin" path="res://assets/loop1/background.png" id="5_ohh3f"]
+[ext_resource type="Script" uid="uid://12x3dpeikaut" path="res://scenes/loop_1/tree_tracker.gd" id="6_aksaf"]
 
 [node name="Node2D" type="Node2D" unique_id=778425580]
 script = ExtResource("1_xgdwn")
@@ -102,6 +103,36 @@ offset_right = 751.0
 offset_bottom = 92.0
 theme_override_font_sizes/font_size = 64
 text = "Core"
+
+[node name="tree_tracker" type="Label" parent="Control" unique_id=1978393095]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 1419.0
+offset_right = 430.0
+offset_bottom = 1561.0
+theme_override_font_sizes/font_size = 92
+text = "Wood: 1"
+script = ExtResource("6_aksaf")
+
+[node name="rock_tracker" type="Label" parent="Control" unique_id=1231828483]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 1534.0
+offset_right = 430.0
+offset_bottom = 1676.0
+theme_override_font_sizes/font_size = 92
+text = "Rock: 1"
+script = ExtResource("6_aksaf")
+
+[node name="lava_tracker" type="Label" parent="Control" unique_id=165104634]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 1644.0
+offset_right = 430.0
+offset_bottom = 1786.0
+theme_override_font_sizes/font_size = 92
+text = "Lava: 1"
+script = ExtResource("6_aksaf")
 
 [connection signal="timeout" from="Surface/surface_spawn_timer" to="Surface" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Cave/cave_spawn_timer" to="Cave" method="_on_spawn_timer_timeout"]
