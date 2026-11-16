@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b2jk35q2kl3ki"]
+
+[ext_resource type="Script" uid="uid://dq4kknn02en6h" path="res://scenes/loop_1/tree.gd" id="1_ikt83"]
+[ext_resource type="Texture2D" uid="uid://dysjgvin07nvs" path="res://icon.svg" id="2_hv7pp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu8r8"]
+size = Vector2(117, 118)
+
+[node name="Tree" type="Node2D" unique_id=1015225846]
+script = ExtResource("1_ikt83")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1778529240]
+texture = ExtResource("2_hv7pp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=827767383]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=793310837]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_gu8r8")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=56332716]
+visible = false
+offset_left = -60.0
+offset_top = 67.0
+offset_right = 62.0
+offset_bottom = 94.0
+max_value = 3.0
+step = 1.0
+show_percentage = false
+
+[node name="Click_delay" type="Timer" parent="." unique_id=1115646803]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

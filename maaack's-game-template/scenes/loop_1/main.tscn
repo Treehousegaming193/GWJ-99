@@ -1,61 +1,89 @@
 [gd_scene format=3 uid="uid://dwidn4ihbk7vg"]
 
-[ext_resource type="PackedScene" uid="uid://cin5u0sigi7a6" path="res://scenes/loop_1/button.tscn" id="1_enwsr"]
 [ext_resource type="Script" uid="uid://b2a8pagt5byrw" path="res://scenes/loop_1/main.gd" id="1_xgdwn"]
-[ext_resource type="Script" uid="uid://2tl773mewjn1" path="res://scenes/loop_1/play_area.gd" id="3_ohh3f"]
-[ext_resource type="PackedScene" uid="uid://p5n2virfjoet" path="res://scenes/loop_1/rock.tscn" id="3_rmllg"]
+[ext_resource type="Script" uid="uid://2tl773mewjn1" path="res://scenes/loop_1/surface.gd" id="3_ohh3f"]
+[ext_resource type="Script" uid="uid://vutskklr4juq" path="res://scenes/loop_1/cave.gd" id="5_aksaf"]
+[ext_resource type="Texture2D" uid="uid://bwfwhdtve5rin" path="res://assets/loop1/background.png" id="5_ohh3f"]
 
 [node name="Node2D" type="Node2D" unique_id=778425580]
 script = ExtResource("1_xgdwn")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2073904489]
+zoom = Vector2(0.3, 0.3)
+
+[node name="Surface" type="Node2D" parent="." unique_id=441502009]
+script = ExtResource("3_ohh3f")
+
+[node name="spawn_1" type="Node2D" parent="Surface" unique_id=1123660802]
+position = Vector2(-1589, -860)
+
+[node name="spawn_2" type="Node2D" parent="Surface" unique_id=2125385967]
+position = Vector2(840, 793)
+
+[node name="Background" type="Sprite2D" parent="Surface" unique_id=1861335132]
+position = Vector2(10, -2)
+scale = Vector2(1.2166476, 0.9701613)
+texture = ExtResource("5_ohh3f")
+
+[node name="surface_spawn_timer" type="Timer" parent="Surface" unique_id=1053683265]
+autostart = true
+
+[node name="Cave" type="Node2D" parent="." unique_id=1102665934]
+visible = false
+script = ExtResource("5_aksaf")
+
+[node name="spawn_1" type="Node2D" parent="Cave" unique_id=804835690]
+position = Vector2(-1589, -860)
+
+[node name="spawn_2" type="Node2D" parent="Cave" unique_id=1856444041]
+position = Vector2(840, 793)
+
+[node name="Background" type="Sprite2D" parent="Cave" unique_id=1688770920]
+position = Vector2(10, -2)
+scale = Vector2(1.2166476, 0.9701613)
+texture = ExtResource("5_ohh3f")
+
+[node name="cave_spawn_timer" type="Timer" parent="Cave" unique_id=1375093982]
+wait_time = 2.0
+autostart = true
+
 [node name="Control" type="Control" parent="." unique_id=850861335]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -520.0
-offset_top = -718.0
-offset_bottom = 726.0
-grow_horizontal = 0
-grow_vertical = 2
+offset_left = 1179.0
+offset_top = -962.0
+offset_right = 1179.0
+offset_bottom = -962.0
 metadata/_edit_use_anchors_ = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=262133632]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="surface_button" type="Button" parent="Control" unique_id=277292492]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -3.0
+offset_right = 247.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 64
+text = "Surface"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer" unique_id=1872155265]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="cave_button" type="Button" parent="Control" unique_id=1934904034]
+layout_mode = 0
+offset_left = 262.0
+offset_top = -4.0
+offset_right = 502.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 64
+text = "Cave"
 
-[node name="Button" parent="Control/ScrollContainer/VBoxContainer" unique_id=855087114 instance=ExtResource("1_enwsr")]
-layout_mode = 2
+[node name="core_button" type="Button" parent="Control" unique_id=591574621]
+layout_mode = 0
+offset_left = 511.0
+offset_top = -4.0
+offset_right = 751.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 64
+text = "Core"
 
-[node name="Button2" type="Button" parent="Control/ScrollContainer/VBoxContainer" unique_id=131190014]
-layout_mode = 2
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2073904489]
-position = Vector2(-1277, 0)
-zoom = Vector2(0.5, 0.5)
-
-[node name="play_area" type="Node2D" parent="." unique_id=441502009]
-position = Vector2(-1275, 2)
-script = ExtResource("3_ohh3f")
-
-[node name="Rock" parent="play_area" unique_id=1015225846 instance=ExtResource("3_rmllg")]
-position = Vector2(-146, -57)
-
-[node name="spawn_1" type="Node2D" parent="play_area" unique_id=1123660802]
-position = Vector2(-1138, -604)
-
-[node name="spawn_2" type="Node2D" parent="play_area" unique_id=2125385967]
-position = Vector2(557, 578)
-
-[node name="spawn_timer" type="Timer" parent="." unique_id=1053683265]
-autostart = true
-
-[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="spawn_timer" to="play_area" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Surface/surface_spawn_timer" to="Surface" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Cave/cave_spawn_timer" to="Cave" method="_on_spawn_timer_timeout"]
+[connection signal="button_down" from="Control/surface_button" to="." method="_on_surface_button_button_down"]
+[connection signal="button_down" from="Control/cave_button" to="." method="_on_cave_button_button_down"]
