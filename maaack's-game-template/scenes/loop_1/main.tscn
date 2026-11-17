@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://vutskklr4juq" path="res://scenes/loop_1/cave.gd" id="5_aksaf"]
 [ext_resource type="Texture2D" uid="uid://bwfwhdtve5rin" path="res://assets/loop1/background.png" id="5_ohh3f"]
 [ext_resource type="Script" uid="uid://12x3dpeikaut" path="res://scenes/loop_1/tree_tracker.gd" id="6_aksaf"]
+[ext_resource type="Script" uid="uid://cnpn41lgipb43" path="res://scenes/loop_1/rock_tracker.gd" id="7_6sbxy"]
+[ext_resource type="Script" uid="uid://cn2huf8oskpxd" path="res://scenes/loop_1/lava_tracker.gd" id="8_d5640"]
 
 [node name="Node2D" type="Node2D" unique_id=778425580]
 script = ExtResource("1_xgdwn")
@@ -122,7 +124,7 @@ offset_right = 430.0
 offset_bottom = 1676.0
 theme_override_font_sizes/font_size = 92
 text = "Rock: 1"
-script = ExtResource("6_aksaf")
+script = ExtResource("7_6sbxy")
 
 [node name="lava_tracker" type="Label" parent="Control" unique_id=165104634]
 layout_mode = 0
@@ -132,7 +134,7 @@ offset_right = 430.0
 offset_bottom = 1786.0
 theme_override_font_sizes/font_size = 92
 text = "Lava: 1"
-script = ExtResource("6_aksaf")
+script = ExtResource("8_d5640")
 
 [connection signal="timeout" from="Surface/surface_spawn_timer" to="Surface" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Cave/cave_spawn_timer" to="Cave" method="_on_spawn_timer_timeout"]
