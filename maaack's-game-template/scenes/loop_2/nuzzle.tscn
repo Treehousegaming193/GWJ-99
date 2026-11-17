@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://x76qi53cvvwq"]
+
+[ext_resource type="Texture2D" uid="uid://dysjgvin07nvs" path="res://icon.svg" id="1_26a11"]
+[ext_resource type="Script" uid="uid://bqswaxv4no8ux" path="res://scenes/loop_2/nuzzle_controller.gd" id="1_lcljl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcljl"]
+atlas = ExtResource("1_26a11")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8b21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcljl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=107104422 node_paths=PackedStringArray("cpu_particles_2d", "animated_sprite_2d", "line_2d", "nuzzle_open", "nuzzle_close", "nuzzle_hover", "nuzzle_click", "batter_pouring")]
+script = ExtResource("1_lcljl")
+cpu_particles_2d = NodePath("CPUParticles2D")
+animated_sprite_2d = NodePath("AnimatedSprite2D")
+line_2d = NodePath("Line2D")
+nuzzle_open = NodePath("SFX/nuzzle_open")
+nuzzle_close = NodePath("SFX/nuzzle_close")
+nuzzle_hover = NodePath("SFX/nuzzle_hover")
+nuzzle_click = NodePath("SFX/nuzzle_click")
+batter_pouring = NodePath("SFX/batter_pouring")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1679922250]
+sprite_frames = SubResource("SpriteFrames_r8b21")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1088128169]
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1719397145]
+
+[node name="SFX" type="Node" parent="." unique_id=1883688221]
+
+[node name="nuzzle_open" type="AudioStreamPlayer" parent="SFX" unique_id=1150941911]
+
+[node name="nuzzle_close" type="AudioStreamPlayer" parent="SFX" unique_id=254881564]
+
+[node name="nuzzle_hover" type="AudioStreamPlayer" parent="SFX" unique_id=1743360174]
+
+[node name="nuzzle_click" type="AudioStreamPlayer" parent="SFX" unique_id=122202439]
+
+[node name="batter_pouring" type="AudioStreamPlayer" parent="SFX" unique_id=116943667]
