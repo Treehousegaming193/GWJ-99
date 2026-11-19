@@ -1,3 +1,53 @@
-[gd_scene format=3 uid="uid://bbsk81dy1jlu1"]
+[gd_scene format=3 uid="uid://bpw7u64anwl5a"]
 
-[node name="Node2D" type="Node2D" unique_id=1342642112]
+[ext_resource type="Script" uid="uid://ckkshm8d7xqox" path="res://scenes/loop_2/main.gd" id="1_w4dqv"]
+[ext_resource type="PackedScene" uid="uid://x76qi53cvvwq" path="res://scenes/loop_2/nuzzle.tscn" id="2_620ne"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_mh5yp"]
+resource_name = "test"
+
+[node name="Node2D" type="Node2D" unique_id=1111183254 node_paths=PackedStringArray("nuzzle_controller", "switch_to_tree", "switch_to_rock", "switch_to_lava", "release_nuzzle")]
+script = ExtResource("1_w4dqv")
+nuzzle_controller = NodePath("NuzzleController")
+switch_to_tree = NodePath("UI/SwitchToTree")
+switch_to_rock = NodePath("UI/SwitchToRock")
+switch_to_lava = NodePath("UI/SwitchToLava")
+release_nuzzle = NodePath("UI/ReleaseNuzzle")
+
+[node name="NuzzleController" parent="." unique_id=107104422 instance=ExtResource("2_620ne")]
+position = Vector2(0, -226)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1628271094]
+
+[node name="SwitchToTree" type="Button" parent="UI" unique_id=1347321917]
+offset_right = 8.0
+offset_bottom = 8.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mh5yp")
+text = "Tree"
+
+[node name="SwitchToRock" type="Button" parent="UI" unique_id=305257878]
+offset_left = 48.0
+offset_right = 94.0
+offset_bottom = 31.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mh5yp")
+text = "Rock
+"
+
+[node name="SwitchToLava" type="Button" parent="UI" unique_id=341137239]
+offset_left = 99.0
+offset_right = 143.0
+offset_bottom = 31.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mh5yp")
+text = "Lava"
+
+[node name="ReleaseNuzzle" type="Button" parent="UI" unique_id=1858757801]
+offset_top = 40.0
+offset_right = 68.0
+offset_bottom = 71.0
+toggle_mode = true
+text = "Release"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=648526496]

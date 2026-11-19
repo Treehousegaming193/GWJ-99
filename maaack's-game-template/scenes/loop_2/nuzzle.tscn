@@ -18,7 +18,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=107104422 node_paths=PackedStringArray("cpu_particles_2d", "animated_sprite_2d", "line_2d", "nuzzle_open", "nuzzle_close", "nuzzle_hover", "nuzzle_click", "batter_pouring")]
+[node name="NuzzleController" type="Node2D" unique_id=107104422 node_paths=PackedStringArray("cpu_particles_2d", "animated_sprite_2d", "line_2d", "nuzzle_open", "nuzzle_close", "nuzzle_hover", "nuzzle_click", "batter_pouring")]
 script = ExtResource("1_lcljl")
 cpu_particles_2d = NodePath("CPUParticles2D")
 animated_sprite_2d = NodePath("AnimatedSprite2D")
@@ -30,6 +30,7 @@ nuzzle_click = NodePath("SFX/nuzzle_click")
 batter_pouring = NodePath("SFX/batter_pouring")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1679922250]
+scale = Vector2(0.15625, 2.09375)
 sprite_frames = SubResource("SpriteFrames_r8b21")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1088128169]
